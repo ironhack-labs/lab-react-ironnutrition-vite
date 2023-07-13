@@ -1,34 +1,23 @@
-import { useState } from "react";
-import { Divider, Input } from "antd";
+import { useState } from 'react';
 
-function Search({ foods, onSearch }) {
-  const [searchInput, setSearchInput] = useState("");
+function Search({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const handleSearch = () => {
-    const filteredFoods = foods.filter((food) =>
-      food.name.toLowerCase().includes(searchInput.toLowerCase())
-    );
-    onSearch(filteredFoods);
+  const handleSearch = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    onSearch(term);
   };
 
   return (
-    <>
-      <Divider></Divider>
-
-      <label>Search</label>
-      <Input
-        name="search"
-        value={searchInput}
-        type="search"
-        placeholder="Search here"
-        onChange={handleChange}
-        onPressEnter={handleSearch}
+    <div className="search-container">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={handleSearch}
       />
-    </>
+    </div>
   );
 }
 

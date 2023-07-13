@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import foodsJson from "../foods.json";
 import FoodBox from "./FoodBox";
 import AddFoodForm from "./AddFoodForm";
@@ -10,21 +10,32 @@ function FoodList() {
 
   const addFood = (newFood) => {
     setFoods([...foods, newFood]);
+    setFilteredFoods([...foods, newFood]);
   };
 
   const removeFood = (id) => {
     const updatedFoods = foods.filter((food) => food.id !== id);
     setFoods(updatedFoods);
+    setFilteredFoods(updatedFoods);
   };
 
-  const handleSearch = (filteredItems) => {
+  const handleSearch = (searchTerm) => {
+    const filteredItems = foods.filter((food) =>
+      food.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     setFilteredFoods(filteredItems);
   };
+
+  useEffect(() => {
+    setFilteredFoods(foods);
+  }, [foods]);
 
   return (
     <>
       <h1>LAB | React IronNutrition</h1>
-      <Search foods={foods} onSearch={handleSearch} />
+
+      <Search onSearch={handleSearch} />
+
       {filteredFoods.map((food) => (
         <FoodBox
           key={food.id}
@@ -32,15 +43,8 @@ function FoodList() {
           onDelete={() => removeFood(food.id)}
         />
       ))}
-      {foods.map((food) => (
-        <FoodBox
-          key={food.id}
-          food={food}
-          onDelete={() => removeFood(food.id)}
-        />
-      ))}
 
-      <AddFoodForm AddFood={addFood} />
+      <AddFoodForm onAddFood={addFood} />
     </>
   );
 }
