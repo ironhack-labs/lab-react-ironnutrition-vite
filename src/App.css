@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+
+img {
+ width:80%
+}
+
+.foodCard{
+  border: 2px solid grey;
+  margin: 5px;
+  width: 30%
+}
+
+.AddFood{
+  width: 30%;
+  margin: auto;
+}
+
+.foodContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 98%;
+}
