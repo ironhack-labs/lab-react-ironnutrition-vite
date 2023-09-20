@@ -44,6 +44,7 @@ function FoodList() {
             <AddFoodForm addNewFood={addNewFood} />
 
             <div className="food-container">
+
                 {foods.map((food) => {
                     return <FoodBox
                         key={food.id}

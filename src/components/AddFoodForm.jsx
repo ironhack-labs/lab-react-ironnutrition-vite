@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Divider, Input, Button } from "antd";
+import { Divider, Input, Button, Row } from "antd";
 
 function AddFoodForm({ addNewFood }) {
     const [name, setName] = useState("");
@@ -25,39 +25,43 @@ function AddFoodForm({ addNewFood }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <Divider>Add Food Entry</Divider>
 
-            <label>Name: </label>
-            <Input
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleNameInput}
-            />
-            <label>Image: </label>
-            <Input
-                type="text"
-                name="image"
-                value={image}
-                onChange={handleImageInput}
-            />
-            <label>Calories: </label>
-            <Input
-                type="number"
-                name="calories"
-                value={calories}
-                onChange={handleCaloriesInput}
-            />
-            <label>Serving: </label>
-            <Input
-                type="number"
-                name="serving"
-                value={servings}
-                onChange={handleServingsInput}
-            />
-            <Button type="submit" >Create</Button>
-        </form>
+        <Row Row style={{ width: "100%", justifyContent: "center" }}>
+
+            <Divider> Add Food Entry</Divider>
+            <form onSubmit={handleSubmit}>
+
+                <label>Name: </label>
+                <Input
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={handleNameInput}
+                />
+                <label>Image: </label>
+                <Input
+                    type="text"
+                    name="image"
+                    value={image}
+                    onChange={handleImageInput}
+                />
+                <label>Calories: </label>
+                <Input
+                    type="number"
+                    name="calories"
+                    value={calories}
+                    onChange={handleCaloriesInput}
+                />
+                <label>Serving: </label>
+                <Input
+                    type="number"
+                    name="serving"
+                    value={servings}
+                    onChange={handleServingsInput}
+                />
+                <Button type="submit" >Create</Button>
+            </form>
+        </Row>
 
     );
 }

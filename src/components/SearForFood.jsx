@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input } from "antd";
+import { Divider, Input } from "antd";
 
 function SearchForFood({ searchFood }) {
 
@@ -14,6 +14,7 @@ function SearchForFood({ searchFood }) {
 
     return (
         <div className="SearchForFood">
+            <Divider>Search for Food</Divider>
             <Input
                 type="text"
                 name="name"
