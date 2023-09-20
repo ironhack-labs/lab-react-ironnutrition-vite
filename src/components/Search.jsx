@@ -1,29 +1,19 @@
-// import { useState } from "react";
+import { useState } from "react";
+import { Divider, Input, Button } from "antd";
 
-// function Search({ foods }) {
-//   const [searchInput, setSearchInput] = useState("");
+function Search({ searchTerm, handleChange }) {
 
-//   const handleInput = (e) => {
-//     e.preventDefault();
-//     setSearchInput(e.target.value.toLowerCase());
-//   };
+  return (
+    <div className="search">
+      <Input
+        type="text"
+        placeholder="Search for food..."
+        value={searchTerm}
+        onChange={handleChange}
+      />
+      {/* <button onClick={handleSearch}>Search</button> */}
+    </div>
+  );
+}
 
-//   if (searchInput.length > 0) {
-//     foods.filter((food) => {
-//       return food.name.match(searchInput);
-//     });
-//   }
-
-//   return (
-//     <div className="input-box">
-//       <h4>Search food</h4>
-//       <input
-//         type="text"
-//         onChange={handleInput}
-//         value={searchInput}
-//       />
-//     </div>
-//   );
-// }
-
-// export default Search;
+export default Search;

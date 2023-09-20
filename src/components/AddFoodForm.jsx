@@ -31,7 +31,7 @@ function AddFood(props) {
       <form onSubmit={handleSubmit}>
         <Divider>Add Food Entry</Divider>
         <label>Name: </label>
-        <input
+        <Input
           type="text"
           name="name"
           value={name}
@@ -39,7 +39,7 @@ function AddFood(props) {
         />
 
         <label>Image: </label>
-        <input
+        <Input
           type="text"
           name="image"
           value={image}
@@ -47,7 +47,7 @@ function AddFood(props) {
         />
 
         <label>Calories: </label>
-        <input
+        <Input
           type="number"
           name="calories"
           value={calories}
@@ -55,7 +55,7 @@ function AddFood(props) {
         />
 
         <label>Servings: </label>
-        <input
+        <Input
           type="number"
           name="servings"
           value={servings}
