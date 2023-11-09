@@ -14,56 +14,32 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.formStyle {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid whitesmoke;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.formInput {
+  padding: 10px;
+  margin: 10px;
+  font-size: 120%
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.resizeImage {
+  width: 50%;
+  height: 50%;
 }
 
-button {
+.buttonElm {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid whitesmoke;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: whitesmoke;
+  color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
