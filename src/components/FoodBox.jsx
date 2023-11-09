@@ -1,25 +1,32 @@
-import App from "../App";
+
+import "../index.css"
 
 function Foodbox(props) {
-  
     return (
         <div>     
-            <p>{props.food.name}</p>
+        <p>{props.food.name}</p>
 
-            <img src={props.food.image} />
+        <img className="resizeImage" src={props.food.image} />
 
-            <p>Calories: {props.food.calories}</p>
-            <p>Servings {props.food.servings}</p>
+        <p>Calories: {props.food.calories}</p>
+        <p>Servings {props.food.servings}</p>
 
-            <p>
-                <b>Total Calories: {props.food.servings * props.food.calories} </b> kcal
-            </p>
+        <p>
+            <b>Total Calories: {props.food.servings * props.food.calories} </b> kcal
+        </p>
 
-            <button>Delete</button>
+        <button className="buttonElm"
+        onClick={function () {
+            props.callbackToDelete(props.food.name);
+        }}
+        >Delete</button>
 
-            <App />
-      </div>
+        
+  </div>
+
+           
     );
-  }
-  
-  export default Foodbox;
+}
+
+export default Foodbox;
+
