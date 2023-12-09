@@ -13,7 +13,7 @@ export function FoodForm ({foodState,setState}){
     const handleSubmit = (e) => {
       e.preventDefault();
       const newFood = { name, image, calories, servings };
-      // Add logic here to handle the new food object
+     
       setState([...foodState,newFood]);
    setName('');
       setImage('');
