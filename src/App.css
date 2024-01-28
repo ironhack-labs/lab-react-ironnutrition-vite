@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
