@@ -21,11 +21,13 @@ const FoodList = () => {
         <div>
             <Form onSubmit={handleOnSubmit}/> 
             <h2>Food List:</h2>
+            <div className="row">
             {foods.map((food) => {
                 return (
                 <FoodBox id={food.id} onDelete={onDelete} key={food.id} name={food.name} calories={food.calories} servings={food.servings} image={food.image}/>
                 )
             })}
+            </div>
         </div>
     )
 

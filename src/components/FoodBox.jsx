@@ -1,8 +1,8 @@
 const FoodBox = ({ name, calories, servings, image, id, onDelete}) => {
-    let totalCalories = servings * calories;
+  
     return(
-        <div>
-        <p>{name}</p>
+        <div className="card-body">
+        <p className="card-title">{name}</p>
       
         <img src={image} />
       
@@ -10,7 +10,7 @@ const FoodBox = ({ name, calories, servings, image, id, onDelete}) => {
         <p>Servings: {servings}</p>
       
         <p>
-          <b>Total Calories: {totalCalories} </b> kcal
+          <b>Total Calories: {servings * calories} </b> kcal
         </p>
       
         <button onClick={() => onDelete(id)} className="btn btn-danger">Delete</button>

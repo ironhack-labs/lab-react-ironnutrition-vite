@@ -45,3 +45,8 @@ img {
   max-width: 200px;
   max-height: 200px;
 }
+
+.card-body {
+  padding: 2em;
+  width: 18rem;
+}
