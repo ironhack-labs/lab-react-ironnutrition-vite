@@ -1,0 +1,9 @@
+.FoodBox {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 80%;
+}
+
+.FoodBox .food-images {
+    width: 20%;
+}
