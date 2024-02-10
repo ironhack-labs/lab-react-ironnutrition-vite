@@ -1,0 +1,28 @@
+.AddFoodForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.AddFoodForm form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.AddFoodForm form input {
+    background-color: white;
+    color: black;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.AddFoodForm form input[type='submit'] {
+    margin: 0 auto;
+    color: black;
+    width: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    margin-bottom: 10px;
+}
