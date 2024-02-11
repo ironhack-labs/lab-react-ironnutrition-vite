@@ -1,9 +1,13 @@
 import "./App.css";
+import FoodsList from "./components/FoodsList/FoodsList";
+
 
 function App() {
+
+
   return (
     <div className="App">
-      <h1>LAB | React IronNutrition</h1>
+      <FoodsList />
     </div>
   );
 }

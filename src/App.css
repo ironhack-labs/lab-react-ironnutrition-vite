@@ -5,38 +5,47 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.foodImage {
+  max-width: 800px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Card {
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  margin-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.foodForm {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.card {
-  padding: 2em;
+.foodForm label {
+  width: calc(50% - 20px);
+  margin: 0 10px;
+  padding-bottom: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.foodForm label input {
+  display: block;
+  width: 80%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+input[type='submit'] {
+  width: 100%;
+  margin: 10px;
+  padding: 5px;
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: 100;
+
 }
