@@ -52,3 +52,14 @@ input {
 label {
   margin-right: 0.5rem;
 }
+
+.food-form {
+  width: 20rem;
+  margin: auto;
+}
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+

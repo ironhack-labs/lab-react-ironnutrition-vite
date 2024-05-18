@@ -1,4 +1,6 @@
 import {useState} from "react";
+//import { Divider, Input, Button } from "antd";
+import { Divider, Input} from "antd";
 
 const AddFoodForm = props => {
     const [name, setName] = useState("");
@@ -42,23 +44,23 @@ const AddFoodForm = props => {
 
     return (
         <div>
-            <h2>Add Food Entry</h2>
+            <Divider>Add Food Entry</Divider>
 
             <form onSubmit={handleSubmit}>
 
                 <label>Name</label>
-                <input type="text" name="name" value={name} onChange={handleName} /><br />
+                <Input type="text" name="name" value={name} onChange={handleName} /><br />
 
                 <label>Image</label>
-                <input type="text" name="image" value={image} onChange={handleImage} /><br />
+                <Input type="text" name="image" value={image} onChange={handleImage} /><br />
 
                 <label>Calories</label>
-                <input type="number" name="calories" value={calories} onChange={handleCalories} /><br />
+                <Input type="number" name="calories" value={calories} onChange={handleCalories} /><br />
 
                 <label>Servings</label>
-                <input type="number" name="servings" value={servings} onChange={handleServings} /><br />
+                <Input type="number" name="servings" value={servings} onChange={handleServings} /><br />
 
-                <button type="submit">Create</button>
+                <button type="submit">Create</button> {/* when I change the button to Button it stops working */}
             </form>
         </div>
     )
