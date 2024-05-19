@@ -60,7 +60,7 @@ const AddFoodForm = props => {
                 <label>Servings</label>
                 <Input type="number" name="servings" value={servings} onChange={handleServings} /><br />
 
-                <button type="submit">Create</button> {/* when I change the button to Button it stops working */}
+                <button className="create-button" type="submit">Create</button> {/* when I change the button to Button it stops working */}
             </form>
         </div>
     )
