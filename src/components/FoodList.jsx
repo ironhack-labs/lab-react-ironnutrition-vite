@@ -19,6 +19,16 @@ const FoodList = () => {
     }
 
     const handleSearch = value => {
+
+        /*         if(foods==[]) {
+            return <p>Oops! There is no food you are searching for</p>
+        } else {
+        const foodAfterSearch = foodsJson.filter(food => {
+            return food.name.toLowerCase().includes(value.toLowerCase())
+        });
+        setFoods(foodAfterSearch);
+        setSearch(value);} */
+
         const foodAfterSearch = foodsJson.filter(food => {
             return food.name.toLowerCase().includes(value.toLowerCase())
         });

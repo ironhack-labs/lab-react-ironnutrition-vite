@@ -7,7 +7,8 @@ const Search = props => {
         return (
             <form>
                 <Divider>Search</Divider>
-                <Input className="search-input" type="text" placeholder="Search" value={props.searchValue} onChange={handleSearch} />
+                <label>Search</label>
+                <Input className="search-input" type="text" placeholder="Enter search item" value={props.searchValue} onChange={handleSearch} />
             </form>
         )
 }
