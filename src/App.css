@@ -1,42 +1,43 @@
-#root {
-  max-width: 1280px;
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.FoodList {
   margin: 0 auto;
-  padding: 2rem;
+  max-width: 40rem;
+}
+
+.FoodBox {
+  text-align: center;
+  border: 1px solid #747bff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .42);
+  height: max-content;
+}
+
+.AddFoodForm {
+  margin: 0 auto 1rem auto;
+  border: 1px solid #747bff;
+  padding: 1rem;
+  max-width: 40rem;
+}
+
+.AddFoodForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.Search {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.Search input {
+  padding-block: .32rem;
+  width: 100%;
 }
