@@ -1,7 +1,8 @@
 import { useState } from "react";
+import {Divider, Input, Button } from "antd";
 
 function AddFoodForm(props) {
-  const { addFoodForm } = props;
+  const {addFoodForm} = props;
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -48,9 +49,11 @@ function AddFoodForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
+        <Divider>Add Food Entry</Divider>
       <fieldset>
         <label htmlFor="food-name">Name</label>
-        <input
+        <Input
+         name="food-name"
           type="text"
           id="food-name"
           onChange={handleNameInput}
@@ -59,7 +62,8 @@ function AddFoodForm(props) {
       </fieldset>
       <fieldset>
         <label htmlFor="food-image">Image</label>
-        <input
+        <Input
+         name="food-image"
           type="text"
           id="food-image"
           onChange={handleImageInput}
@@ -68,7 +72,8 @@ function AddFoodForm(props) {
       </fieldset>
       <fieldset>
         <label htmlFor="food-calories">Calories </label>
-        <input
+        <Input
+         name="food-calories"
           type="number"
           id="food-calories"
           onChange={handleCaloriesInput}
@@ -77,7 +82,8 @@ function AddFoodForm(props) {
       </fieldset>
       <fieldset>
         <label htmlFor="food-servings">Servings</label>
-        <input
+        <Input
+         name="food-servings"
           type="number"
           id="food-servings"
           onChange={handleServingsInput}

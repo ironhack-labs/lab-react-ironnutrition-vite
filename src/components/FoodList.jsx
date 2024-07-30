@@ -2,6 +2,7 @@ import { useState } from "react";
 import foods from "../foods.json";
 import FoodBox from "./FoodBox";
 import AddFoodForm from "./AddFoodForm";
+import { Row, Divider } from "antd";
 
 function FoodList() {
   // Implement deleteFood function to remove food from foodData array
@@ -23,7 +24,7 @@ https://images.immediate.co.uk/production/volatile/sites/30/2020/02/persimmon-07
   // Create a new foodData object
 
   const addFoodForm = (newFoodData) => {
-    setFoodData([...foodData, newFoodData]);
+    setFoodData([...foodData,  newFoodData]);
   };
 
   // Fetch and display food data from foods.json file
@@ -35,19 +36,20 @@ https://images.immediate.co.uk/production/volatile/sites/30/2020/02/persimmon-07
     name : "Orange",
     calories: 85,
     image: "https://i.imgur.com/abKGOcv.jpg",
-    servings: 1
+    servings: 5
   }; */
 
   return (
     <div>
-      <h1>Add Food Entry</h1>
+<Divider><h1>Add Food Entry</h1></Divider>
       <section className="food-entry">
         <AddFoodForm addFoodForm={addFoodForm}></AddFoodForm>
       </section>
       <br/>
+      <body>
       <section>
-        <h1>Food List </h1>
-        <body>
+      <Divider><h1>Food List</h1></Divider>
+      <Row style={{ width: "100%", justifyContent: "center" }}>
           <div class="container">
             {/* <FoodBox food={mockFood} /> */}
             {foodData.map((food) => (
@@ -55,8 +57,9 @@ https://images.immediate.co.uk/production/volatile/sites/30/2020/02/persimmon-07
             ))}
           </div>
           <br/>
-        </body>
+        </Row>
       </section>
+      </body>
     </div>
   );
 }

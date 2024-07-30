@@ -1,3 +1,4 @@
+import { Card, Col, Button } from "antd";
 function FoodBox(props) {
   const {food, deleteFood} = props;
   const handleDelete = () => {
@@ -5,25 +6,20 @@ function FoodBox(props) {
     deleteFood(foodCopy);
   }
   return (
-    <div className="food-card">
-      <section>
-      <h2>{food.name}</h2>
-
-      <img src={food.image} alt={food.name} width="300"/>
-
+    <Col>
+      <Card title={food.name} style={{ width: 230, height: 300, margin: 10 }}>
+        <img src={food.image} height={60} alt="food" />
       <p>Calories: {food.calories}</p>
-      <p>Servings <b>{food.servings}</b></p>
-
-      <p>
-        <b>
+      <p>Servings {food.servings}</p>
+        <p>
+         <b>
           Total Calories: {food.servings * food.calories}{" "}
         </b>{" "}
         kcal
       </p>
-      <button onClick={handleDelete}>Delete</button>
-      </section>
-    </div>
-    
+          <Button type="primary" onClick={handleDelete}>Delete</Button>
+      </Card>
+    </Col>
   );
 }
 

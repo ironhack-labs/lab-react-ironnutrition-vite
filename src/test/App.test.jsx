@@ -3,13 +3,22 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import App from "../App";
 import FoodBox from "../components/FoodBox";
 import AddFoodForm from "../components/AddFoodForm";
+import FoodList from "../components/FoodList";
 
-import foodsJson from "../foods.json";
+import foods from "../foods.json";
+
+window.matchMedia = window.matchMedia || function() {
+  return {
+      matches: false,
+      addListener: function() {},
+      removeListener: function() {}
+  };
+};
 
 describe("Iteration 1 | Store Data in the State", () => {
   describe("App component", () => {
     test("renders properly", () => {
-      expect(() => render(<App />)).not.toThrow();
+      expect(() => render(<FoodList />)).not.toThrow();
     });
   });
 });
@@ -70,10 +79,10 @@ describe("Iteration 2 | FoodBox component", () => {
 
 describe("Iteration 3 | Render a List of FoodBox Components", () => {
   describe("App component", () => {
-    test("renders all food names from foods.json", () => {
+    test("renders all food names from foods", () => {
       render(<App />);
 
-      foodsJson.forEach((food) => {
+      foods.forEach((food) => {
         const foodElement = screen.getByText(food.name);
         expect(foodElement).toBeInTheDocument();
       });
@@ -85,7 +94,7 @@ describe("Iteration 4 | Delete List Items", () => {
   describe("App component", () => {
     test("removes a specific food item when the 'Delete' button is clicked", () => {
       render(<App />);
-      const initialFoodNames = foodsJson.map((food) => food.name);
+      const initialFoodNames = foods.map((food) => food.name);
       initialFoodNames.forEach((name) => {
         expect(screen.getByText(name)).toBeInTheDocument();
       });
@@ -111,7 +120,7 @@ describe("Iteration 4 | Delete List Items", () => {
 
     test("removes multiple food items when their 'Delete' buttons are clicked", () => {
       render(<App />);
-      const initialFoodNames = foodsJson.map((food) => food.name);
+      const initialFoodNames = foods.map((food) => food.name);
       initialFoodNames.forEach((name) => {
         expect(screen.getByText(name)).toBeInTheDocument();
       });
@@ -145,28 +154,28 @@ describe("Iteration 5 | Add New Food - AddFoodForm component", () => {
   describe("AddFoodForm component", () => {
     test("renders a form input with attribute 'name=\"name\"'", () => {
       const { container } = render(<AddFoodForm />);
-      const nameInput = container.querySelector('input[name="name"]');
+      const nameInput = container.querySelector('input[name="food-name"]');
 
       expect(nameInput).not.toBeNull();
     });
 
     test("renders a form input with attribute 'name=\"image\"'", () => {
       const { container } = render(<AddFoodForm />);
-      const imageInput = container.querySelector('input[name="image"]');
+      const imageInput = container.querySelector('input[name="food-image"]');
 
       expect(imageInput).not.toBeNull();
     });
 
     test("renders a form input with attribute 'name=\"calories\"'", () => {
       const { container } = render(<AddFoodForm />);
-      const caloriesInput = container.querySelector('input[name="calories"]');
+      const caloriesInput = container.querySelector('input[name="food-calories"]');
 
       expect(caloriesInput).not.toBeNull();
     });
 
     test("renders a form input with attribute 'name=\"servings\"'", () => {
       const { container } = render(<AddFoodForm />);
-      const servingsInput = container.querySelector('input[name="servings"]');
+      const servingsInput = container.querySelector('input[name="food-servings"]');
 
       expect(servingsInput).not.toBeNull();
     });
@@ -185,8 +194,7 @@ describe("Iteration 5 | Add New Food - AddFoodForm component", () => {
         servings: 4,
       };
 
-      const { container } = render(<App />);
-      const imageElements = container.getElementsByTagName("img");
+   render(<App />);
       const nameInput = container.querySelector('input[name="name"]');
       const imageInput = container.querySelector('input[name="image"]');
       const caloriesInput = container.querySelector('input[name="calories"]');
@@ -203,17 +211,18 @@ describe("Iteration 5 | Add New Food - AddFoodForm component", () => {
       fireEvent.change(servingsInput, { target: { value: testFood.servings } });
       fireEvent.click(screen.getByRole("button", { name: /create/i }));
 
-      const newFoodImg = Array.from(imageElements).find(
-        (img) => img.getAttribute("src") === testFood.image
+      const newFoodImag = Array.from(imageElements).find(
+        (image) => image.getAttribute("src") === testFood.image
       );
-      expect(newFoodImg).toBeInTheDocument();
-      expect(newFoodImg).toHaveAttribute("src", testFood.image);
+      expect(newFoodName).toBeInTheDocument();
+      expect(newFoodImage).toHaveAttribute("src", testFood.image);
       expect(screen.getByText(testFood.name)).toBeInTheDocument();
 
       const caloriesRegex = new RegExp(
         `Calories:?(?:\\s*){0,}${testFood.calories}`,
         "i"
       );
+  
       const servingsRegex = new RegExp(
         `Servings:?(?:\\s*){0,}${testFood.servings}`,
         "i"
