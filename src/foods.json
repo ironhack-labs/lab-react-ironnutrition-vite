@@ -28,14 +28,14 @@
     "servings": 1
   },
   {
-    "id": "f4b4d2bc-ff12-4f3f-b3b3-19d2f1682401",    
+    "id": "f4b4d2bc-ff12-4f3f-b3b3-19d2f1682401",
     "name": "Pot Roast",
     "calories": 350,
     "image": "https://i.imgur.com/WCzJDWz.jpg",
     "servings": 1
   },
   {
-    "id": "bf89c1db-5c5b-4262-9d1e-8a68f88c61d5",    
+    "id": "bf89c1db-5c5b-4262-9d1e-8a68f88c61d5",
     "name": "Lasagna",
     "calories": 750,
     "image": "https://i.imgur.com/ClxOafl.jpg",
@@ -56,21 +56,21 @@
     "servings": 1
   },
   {
-    "id": "d087343e-9a92-48c7-8b27-43e37491b6f5",   
+    "id": "d087343e-9a92-48c7-8b27-43e37491b6f5",
     "name": "Almonds",
     "calories": 75,
     "image": "https://i.imgur.com/JRp4Ksx.jpg",
     "servings": 1
   },
   {
-    "id": "e1f87a2e-60b3-4a3f-bb48-20a396a9a94f",    
+    "id": "e1f87a2e-60b3-4a3f-bb48-20a396a9a94f",
     "name": "Sarma",
     "calories": 200,
     "image": "https://i.imgur.com/yOlf4Fj.jpg",
     "servings": 1
   },
   {
-    "id": "0ce7e4d4-1c8a-4e9f-98df-1ecb1e7b8a0b",    
+    "id": "0ce7e4d4-1c8a-4e9f-98df-1ecb1e7b8a0b",
     "name": "Bacon",
     "calories": 175,
     "image": "https://i.imgur.com/7GlqDsG.jpg",
