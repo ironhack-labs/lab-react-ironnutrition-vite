@@ -1,7 +1,7 @@
 import FoodBox from './FoodBox';
 
 function FoodList({ foods, deleteFood }) {
-	const NoFoodMessage = <p>No foods added yet!</p>;
+	const NoFoodMessage = <p>Oops! There is no more content to show.</p>;
 
 	const FoodBoxes = (
 		<ul style={{ display: 'flex', flexWrap: 'wrap' }}>
