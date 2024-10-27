@@ -1,8 +1,10 @@
 import './App.css';
-import foodsJson from './foods.json';
-import FoodBox from './components/FoodBox';
-import AddFoodForm from './components/AddFoodForm';
 import { useState } from 'react';
+
+import foodsJson from './foods.json';
+
+import AddFoodForm from './components/AddFoodForm';
+import FoodList from './components/FoodList';
 
 const state = {
 	foods: foodsJson,
@@ -27,12 +29,7 @@ function App() {
 			<h1>LAB | React IronNutrition</h1>
 
 			<AddFoodForm onAdd={addFood}></AddFoodForm>
-
-			<ul style={{ listStyle: 'none' }}>
-				{foods.map(food => (
-					<FoodBox key={food.id} food={food} onDelete={deleteFood}></FoodBox>
-				))}
-			</ul>
+			<FoodList foods={foods} deleteFood={deleteFood} />
 		</div>
 	);
 }
