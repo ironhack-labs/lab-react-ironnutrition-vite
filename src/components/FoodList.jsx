@@ -4,7 +4,7 @@ function FoodList({ foods, deleteFood }) {
 	const NoFoodMessage = <p>No foods added yet!</p>;
 
 	const FoodBoxes = (
-		<ul style={{ listStyle: 'none' }}>
+		<ul style={{ display: 'flex', flexWrap: 'wrap' }}>
 			{foods.map(food => (
 				<FoodBox key={food.id} food={food} onDelete={deleteFood} />
 			))}

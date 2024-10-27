@@ -18,11 +18,13 @@ function App() {
 			prevFoods.filter(food => food.id !== idOfFoodToDelete)
 		);
 
-	const addFood = food =>
+	const addFood = food => {
+		console.log('🚀 ~ addFood ~ food:', food);
 		setFoods(prevFoods => {
 			console.log('adding ', food);
 			return [food, ...prevFoods];
 		});
+	};
 
 	return (
 		<div className='App'>
