@@ -4,7 +4,7 @@ function FoodBox({ food, onDelete }) {
 	const handleDelete = () => onDelete(food.id);
 
 	return (
-		<div style={{ border: '1px solid lightgrey', padding: '2rem' }}>
+		<li style={{ border: '1px solid lightgrey', padding: '2rem' }}>
 			<h3>{name}</h3>
 
 			<img src={image} style={{ maxWidth: '30vw' }} />
@@ -17,7 +17,7 @@ function FoodBox({ food, onDelete }) {
 			</p>
 
 			<button onClick={handleDelete}>Delete</button>
-		</div>
+		</li>
 	);
 }
 
