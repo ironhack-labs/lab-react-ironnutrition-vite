@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Divider, Input, Button, Form } from 'antd';
+import { Divider, Input, Button } from 'antd';
 
 function AddFoodForm({ onAdd }) {
 	const [name, setName] = useState('');
@@ -64,7 +64,7 @@ function AddFoodForm({ onAdd }) {
 				onChange={handleServingsInput}
 			/>
 
-			<Button type='primary' htmlType='submit'>
+			<Button type='primary' htmlType='submit' style={{ margin: '1rem' }}>
 				Create
 			</Button>
 		</form>
