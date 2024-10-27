@@ -2,14 +2,22 @@ import './App.css';
 import foodsJson from './foods.json';
 import FoodBox from './components/FoodBox';
 
-const state = foodsJson;
+const state = {
+	foods: foodsJson,
+};
 
 function App() {
 	return (
 		<div className='App'>
 			<h1>LAB | React IronNutrition</h1>
-			{/* <pre style={{ textAlign: 'left' }}>{JSON.stringify(state, null, 2)}</pre> */}
-			<FoodBox food={state[10]}></FoodBox>
+
+			<ul style={{ listStyle: 'none' }}>
+				{state.foods.map((food, i) => (
+					<li key={i}>
+						<FoodBox food={food}></FoodBox>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }

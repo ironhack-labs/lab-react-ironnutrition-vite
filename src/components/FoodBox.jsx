@@ -2,7 +2,7 @@ function FoodBox({ food }) {
 	const { name, image, calories, servings } = food;
 
 	return (
-		<div>
+		<div style={{ border: '1px solid lightgrey', padding: '2rem' }}>
 			<h3>{name}</h3>
 
 			<img src={image} style={{ maxWidth: '40vw' }} />
