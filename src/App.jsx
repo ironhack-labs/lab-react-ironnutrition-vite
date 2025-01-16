@@ -2,6 +2,7 @@ import "./App.css";
 import foodsJson from "./foods.json";
 import { useState } from "react";
 import FoodBox from "./components/FoodBoox/FoodBox";
+import AddFoodForm from "./components/AddFoodForm/AddFoodForm";
 
 
 function App() {
@@ -12,10 +13,19 @@ function App() {
     setFoods(filterFood)
 
   }
+  const addNewFood = (newFood) => {
+    setFoods([
+      ...foods,
+      newFood
+    ])
+  }
 
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
+      <div>
+        <AddFoodForm addNewFood={addNewFood}/>
+      </div>
       <div>
       {foods.map((food)=>( <FoodBox deleteFood={deleteFood}  key={food.id} food={food}/>))}
         
