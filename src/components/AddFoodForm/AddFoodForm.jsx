@@ -1,11 +1,12 @@
 import { useState } from "react";
+import './AddFoodForm.css'
 
 
 function AddFoodForm ({addNewFood}) {
     const [name, setName] = useState("")
-    const [calories, setCalories] = useState("")
+    const [calories, setCalories] = useState(0)
     const [image, setImage] = useState("")
-    const [servings, setServings] = useState(1)
+    const [servings, setServings] = useState(0)
 
     const handleSubmit = (e) => {
         // Evitar que el formulario se envíe y recargue la página
@@ -22,9 +23,9 @@ function AddFoodForm ({addNewFood}) {
         addNewFood(newFood);
 
         setName("")
-        setCalories("")
+        setCalories(0)
         setImage("")
-        setServings(1)
+        setServings(0)
 
     }
     
@@ -33,13 +34,13 @@ function AddFoodForm ({addNewFood}) {
     return(
         <form form className="create-food" onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
 
             <label htmlFor="calories">Calories</label>
             <input type="number" value={calories} onChange={(e) => setCalories(e.target.value)}/>
 
             <label htmlFor="image">Image</label>
-            <input type="text" value={image} onChange={(e) => setImage(e.target.value)}/>
+            <input type="text" value={image} onChange={(e) => setImage(e.target.value)} required/>
 
             <label htmlFor="servings">Servings</label>
             <input type="number" value={servings} onChange={(e) => setServings(e.target.value)}/>
